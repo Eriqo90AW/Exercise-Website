@@ -1,15 +1,15 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-import logo from "../../assets/images/exercise-logos.svg"
+import logo from "../../assets/exercise-logos.svg"
 
-function Logo({ ...props }) {
+function Logo({ size, style = "", ...props }) {
   return (
-    <Link id="exercise-logo" to="/" onClick={props.onClick}>
+    <Link id="exercise-logo" to="/home" onClick={props.onClick}>
       <img
         alt="Exercise's Logo"
         src={logo}
-        className={props.size ? `w-${props.size}` : "w-24"}
+        className={`${size || "w-16"} ${style}`}
       />
     </Link>
   )
